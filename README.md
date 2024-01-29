@@ -10,11 +10,7 @@ docker-compose up -d
 Permission denied issue
 Go to www container and execute command "chmod -R 777 ./"
 
-Open phpmyadmin at [http://localhost:8092](http://localhost:8092)
-Open web browser to look at a simple php example at [http://localhost:8091](http://localhost:8091)
+OR
 
-Run mysql client:
-
-- `docker-compose exec db mysql -u root -p` 
-
-Enjoy !
+sudo find /var/www/html/uploads -type d -exec chmod 777 {} \;
+sudo find /var/www/html/uploads -type f -exec chmod 777 {} \;
