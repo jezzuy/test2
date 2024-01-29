@@ -3,7 +3,7 @@ services:
     www:
         build: .
         ports: 
-            - "8641:80"
+            - "8741:80"
         volumes:
             - ./www:/var/www/html/
         links:
@@ -16,7 +16,7 @@ services:
             - "3308:3308"
         command: --default-authentication-plugin=mysql_native_password
         environment:
-            MYSQL_DATABASE: dockerExample
+            MYSQL_DATABASE: perfex
             MYSQL_USER: user
             MYSQL_PASSWORD: test
             MYSQL_ROOT_PASSWORD: test
@@ -29,7 +29,7 @@ services:
         links: 
             - db:db
         ports:
-            - 8692:80
+            - 8792:80
         environment:
             MYSQL_USER: user
             MYSQL_PASSWORD: test
