@@ -30,10 +30,3 @@ RUN a2enmod rewrite
 # Restart Apache
 RUN service apache2 restart
 
-COPY . /var/www/html/
-
-# Add a startup script
-COPY startup.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/startup.sh
-
-CMD ["startup.sh"]
