@@ -20,9 +20,12 @@ RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl && \
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Set permissions for the web server
+RUN chown -R www-data:www-data /var/www/html && \
+    chmod -R 755 /var/www/html
+
 # Enable Apache modules
 RUN a2enmod rewrite
 
 # Restart Apache
 RUN service apache2 restart
-
