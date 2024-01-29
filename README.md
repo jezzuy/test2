@@ -7,6 +7,8 @@ I use docker-compose as an orchestrator. To run these containers:
 ```
 docker-compose up -d
 ```
+Permission denied issue
+Go to www container and execute command "chmod -R 777 ./"
 
 Open phpmyadmin at [http://localhost:8092](http://localhost:8092)
 Open web browser to look at a simple php example at [http://localhost:8091](http://localhost:8091)
