@@ -12,5 +12,5 @@ Go to www container and execute command "chmod -R 777 ./"
 
 OR
 
-sudo find /var/www/html/uploads -type d -exec chmod 777 {} \;
-sudo find /var/www/html/uploads -type f -exec chmod 777 {} \;
+sudo find /var/www/html/ -type d -exec chmod 777 {} \;
+sudo find /var/www/html/ -type f -exec chmod 777 {} \;
