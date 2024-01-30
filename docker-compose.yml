@@ -28,7 +28,7 @@ services:
             - sqldb
         networks:
             - my-main-net
-            
+
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
         restart: always

@@ -10,7 +10,30 @@ docker-compose up -d
 Permission denied issue
 Go to www container and execute command "chmod -R 777 ./"
 
-OR
+Theme css
 
-sudo find /var/www/html/ -type d -exec chmod 777 {} \;
-sudo find /var/www/html/ -type f -exec chmod 777 {} \;
+.customers_login .login-heading {
+   display: none !important;
+}
+
+.customers_login .customers-nav-item-login {
+   display: none !important;
+}
+
+.copyright-footer {
+   display: none !important;
+}
+
+Create a file with name my_functions_helper.php in application/helpers/ and add the following code:
+
+Version 2.3.0 or above
+<?php
+
+// After contact login from the login form
+hooks()->add_action('after_contact_login','redirect_to_projects');
+// After client registered and logged in automatically
+hooks()->add_action('after_client_register_logged_in','redirect_to_projects');
+
+function redirect_to_projects(){
+redirect(site_url('clients/projects'));
+}
